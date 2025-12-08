@@ -1,0 +1,175 @@
+import React from "react";
+
+export default function EmployeeBlog() {
+  return (
+    <div className="bg-gray-50 min-h-screen py-10">
+      <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8 md:p-12">
+
+        {/* DATE & TAG ROW */}
+        <div className="flex items-center justify-between mb-6">
+          <span className="text-sm text-gray-500">20 Mar 2025</span>
+          <span className="text-xs text-gray-700 bg-gray-200 px-3 py-1 rounded-full font-semibold">
+            Engagement
+          </span>
+        </div>
+
+        {/* MAIN TITLE */}
+        <h1 className="text-4xl md:text-5xl font-bold leading-tight text-gray-900 mb-4">
+          Why Employee Engagement Matters and How to Make It Thrive
+        </h1>
+
+        {/* SUBTITLE */}
+        <p className="text-xl text-gray-600 mb-6">
+          Creating a Culture of Open Communication and Motivation in the Workplace
+        </p>
+
+        {/* AUTHOR INFO */}
+        <div className="flex items-center gap-3 mb-4">
+          <img
+            src="/images/harish.jpeg" // move image to public/images/harish.jpeg
+            alt="Harish M"
+            className="w-12 h-12 rounded-full object-cover"
+          />
+          <div>
+            <a href="#" className="font-semibold text-gray-900 hover:text-blue-600">
+              Harish M
+            </a>
+            <p className="text-sm text-gray-500">Employee Engagement Specialist</p>
+          </div>
+        </div>
+
+        {/* PUBLICATION META */}
+        <div className="flex items-center gap-3 mb-8 text-sm text-gray-500">
+          <span>Published on December 10, 2025</span>
+          <span className="w-1 h-1 bg-gray-400 rounded-full"></span>
+          <span>6 min read</span>
+          <span className="w-1 h-1 bg-gray-400 rounded-full"></span>
+          <a href="#" className="text-blue-600 hover:text-blue-800 flex items-center gap-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M4.98 3.5a2.5 2.5 0 11-.01 5.001 2.5 2.5 0 01.01-5zm.02 7h-4v12h4v-12zm7.982 0h-3.982v12h3.982v-6.356c0-3.602 4.018-3.894 4.018 0v6.356h4v-7.616c0-6.675-7.656-6.423-8.018-3.138v-1.246z" />
+            </svg>
+            LinkedIn
+          </a>
+        </div>
+
+        {/* ARTICLE CONTENT */}
+        <article>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4 mt-12">
+            How to Foster Two-Way Communication
+          </h2>
+
+          <ul className="space-y-4 mb-8 text-gray-700">
+            <li className="leading-relaxed">
+              <strong>Listen Actively:</strong> Create space for open conversations and ensure employees' opinions aren't just heard but acted upon.
+            </li>
+            <li className="leading-relaxed">
+              <strong>Check-in Regularly:</strong> Use tools like surveys or informal chats to understand what's on your team's mind.
+            </li>
+            <li className="leading-relaxed">
+              <strong>Celebrate Contributions:</strong> Recognize when employees share great ideas or provide valuable feedback.
+            </li>
+            <li className="leading-relaxed">
+              <strong>Be Transparent:</strong> Keep the team in the loop about the company's goals, challenges, and progress. When employees see the big picture, they feel like they're part of something bigger.
+            </li>
+          </ul>
+
+          <p className="text-gray-700 leading-relaxed mb-10">
+            By creating this open dialogue, employees feel like they own their work and their contributions. They feel connected, motivated, and more engaged. When everyone is on the same page and communication is flowing both ways, the whole company benefits.
+          </p>
+
+          <h2 className="text-3xl font-bold text-gray-900 mb-4 mt-12">
+            How Monotree Helps
+          </h2>
+
+          <p className="text-gray-700 leading-relaxed mb-6">
+            Monotree is all about making communication easy, open, and engaging. It gives employees a space to connect, share ideas, and participate in the company's journey. With features like social walls, chat tools, and event management, Monotree helps break down barriers, so employees can communicate freely across the organization.
+          </p>
+
+          <p className="text-gray-700 leading-relaxed mb-10">
+            It doesn't stop there — Monotree encourages employee feedback through tools like satisfaction surveys and development questionnaires, so everyone's voice is heard. Whether it's onboarding, training, or just everyday conversations, Monotree fosters an environment where continuous dialogue is encouraged, helping employees feel more connected and engaged.
+          </p>
+
+          {/* SECOND INLINE IMAGE */}
+          <div className="my-10">
+            <img
+              src="/images/blog_engagement_2_inline_2_lg@2x.webp"
+              alt="Team Collaboration"
+              className="w-full rounded-xl shadow-md"
+            />
+          </div>
+
+          {/* SOURCES SECTION */}
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Sources</h2>
+            <ul className="space-y-2">
+              <li>
+                <a href="#" className="text-blue-600 hover:underline">
+                  Employee Engagement Research Report 2025
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-blue-600 hover:underline">
+                  Workplace Mental Health Studies
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-blue-600 hover:underline">
+                  Harvard Business Review – Employee Retention
+                </a>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        {/* MORE POSTS SECTION */}
+        <section className="mt-16 pt-8 border-t border-gray-200">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">More Posts</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { title: "Employee Retention Strategies", category: "Employee Retention" },
+              { title: "Workplace Wellbeing Guide", category: "Employee Wellbeing" },
+              { title: "Building Team Culture", category: "Engagement" }
+            ].map((post, i) => (
+              <div key={i} className="border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                <img
+                  src="/images/blog_retention_teaser_lg@2x.webp"
+                  alt={post.title}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-4">
+                  <span className="text-xs text-gray-600 bg-gray-100 px-2 py-1 rounded-full">
+                    {post.category}
+                  </span>
+                  <h3 className="text-lg font-semibold text-gray-900 mt-3 hover:text-blue-600">
+                    <a href="#">{post.title}</a>
+                  </h3>
+                  <p className="text-gray-600 text-sm mt-2">20 Mar 2025</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* CTA SECTION */}
+        <section className="bg-yellow-50 py-12 px-8 mt-16 rounded-xl text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            Get your app in a few days. Let's get in touch!
+          </h2>
+          <p className="text-gray-700 mb-6 text-lg">
+            We love demonstrating our platform. Please don't hesitate to contact us if you're interested
+          </p>
+          <button className="px-8 py-3 bg-yellow-400 text-gray-900 rounded-lg text-lg font-semibold hover:bg-yellow-500 transition-colors shadow-md">
+            Book Demo
+          </button>
+        </section>
+      </div>
+    </div>
+  );
+}
