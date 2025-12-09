@@ -94,7 +94,7 @@ export default function BlogListPage({ card }: { card?: EmployeeCard }) {
             </div>
 
 
-           
+
             {/* FULL WIDTH GREY BACKGROUND */}
             <div className="w-full bg-gray-100 py-14">
 
@@ -108,7 +108,7 @@ export default function BlogListPage({ card }: { card?: EmployeeCard }) {
                     >
 
                         {/* WHITE CARD */}
-                        <div className="bg-white rounded-[1.5rem] overflow-hidden flex flex-col md:flex-row shadow-sm">
+                        <div className="bg-white rounded-[1.5rem]  overflow-hidden flex flex-col md:flex-row shadow-sm">
 
                             {/* LEFT IMAGE (Width increased from md:w-1/2 to md:w-3/5) */}
                             <div className="md:w-3/5 w-full md:h-[420px] h-[320px]">
@@ -212,55 +212,55 @@ export default function BlogListPage({ card }: { card?: EmployeeCard }) {
                         </div>
                     </div>
 
-                    {/* 3x3 Grid - Focus on the card structure fix */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 pb-12">
-                        {filteredPosts.map((post) => (
-                            <article
-                                key={post.id}
-                                className="
-            group cursor-pointer bg-white rounded-2xl 
-            hover:shadow-lg transition-all duration-300
-            flex flex-col justify-between
-            h-full w-full
-          "
-                            >
-                                {/* IMAGE */}
-                                <div className="relative aspect-[3/2] overflow-hidden rounded-t-2xl">
-                                    <img
-                                        src={post.image}
-                                        alt={post.title}
-                                        className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
-                                    />
-                                    {/* 🛑 The previous absolute category tag is REMOVED from here 🛑 */}
-                                </div>
+                   {/* 3x3 Grid */}
+<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 pb-12">
+  {filteredPosts.map((post) => (
+    <article
+      key={post.id}
+      className="
+        group cursor-pointer bg-white rounded-3xl 
+        hover:shadow-lg transition-all duration-300
+        overflow-hidden
+        flex flex-col
+      "
+    >
+      {/* IMAGE (FULL BLEED, CROPPED, FIXED HEIGHT) */}
+      <div className="w-full h-64 overflow-hidden">
+        <img
+          src={post.image}
+          alt={post.title}
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+      </div>
 
-                                {/* TEXT CONTENT AREA */}
-                                <div className="p-5 flex flex-col justify-between h-full">
+      {/* CONTENT */}
+      <div className="p-6 flex flex-col flex-grow">
 
-                                    {/* ✅ CATEGORY TAG (New position: below image, above title) */}
-                                    <div className="mb-3">
-                                        <span className="bg-gray-100 text-xs text-gray-700 font-medium px-3 py-1 rounded-md">
-                                            {post.category}
-                                        </span>
-                                    </div>
-                                    {/* The tag style in the image looks like a background color, not a white tag on the image. We'll use a light gray background here. */}
+        {/* CATEGORY TAG */}
+        <span className="bg-gray-100 text-xs text-gray-700 font-medium px-3 py-1 rounded-md mb-3 inline-block">
+          {post.category}
+        </span>
 
-                                    {/* TITLE */}
-                                    <h3 className="text-lg font-semibold text-gray-900 leading-snug mb-3 group-hover:text-emerald-600 transition-colors">
-                                        {post.title}
-                                    </h3>
-                                    <p className="text-sm text-gray-600 mt-2 mb-4">
-                                        {post.description}
-                                    </p>
+        {/* TITLE */}
+        <h3 className="text-lg font-semibold text-gray-900 leading-snug mb-3 group-hover:text-emerald-600 transition-colors">
+          {post.title}
+        </h3>
 
-                                    {/* DATE */}
-                                    <div className="text-sm text-gray-500 mt-auto">
-                                        {post.date}
-                                    </div>
-                                </div>
-                            </article>
-                        ))}
-                    </div>
+        {/* DESCRIPTION */}
+        <p className="text-sm text-gray-600 mb-4">
+          {post.description}
+        </p>
+
+        {/* DATE (bottom-aligned) */}
+        <div className="text-sm text-gray-500 mt-auto">
+          {post.date}
+        </div>
+
+      </div>
+    </article>
+  ))}
+</div>
+
                 </div>
             </section>
 
